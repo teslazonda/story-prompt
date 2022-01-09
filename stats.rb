@@ -1,5 +1,7 @@
+# Check if we have any prompts already made
 if File.exist?('out.txt')
   prompt_count = 0
+  # Create arrays to store values of each field in JSON
   outputs_array = []
   number_array = []
   unit_of_measure_array = []
@@ -19,7 +21,7 @@ if File.exist?('out.txt')
     adjective_array << line[14]
     noun_array << line[15]
   end
-  # Create frequency tables for each array and show max in console
+  # Create frequency tables for each array and show max and min NUMBER in console
   max_numberical_input = number_array.max
   min_numerical_input = number_array.min
   # nouns
@@ -44,5 +46,5 @@ if File.exist?('out.txt')
   puts "Most common Noun response: '#{noun_max}', occuring #{noun_freq[noun_max]} times"
   puts "Number of story prompts you have on file: #{prompt_count}"
 else
-  puts '---Error you have not created story promts yet. Please run main.rb before running stats.rb'
+  puts '---Error you have not created story prompts yet. Please run main.rb before running stats.rb'
 end

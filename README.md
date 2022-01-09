@@ -1,6 +1,6 @@
 ## Installation and Running
 Make sure you have [ruby](https://www.ruby-lang.org/en/documentation/installation/) installed.
-To create a story prompmt run ```ruby main.rb``` in the terminal
+To create a story prompmt run ```ruby main.rb``` in the terminal.
 This will create a local file ```out.txt``` in the current directory.
 To see statistics on the promts you have created run ```ruby stats.rb```
 ## Instructions

@@ -1,4 +1,5 @@
 if File.exist?('out.txt')
+  prompt_count = 0
   outputs_array = []
   number_array = []
   unit_of_measure_array = []
@@ -8,6 +9,7 @@ if File.exist?('out.txt')
   File.readlines('out.txt').each do |line|
     line_array = line.split(' ')
     outputs_array << line_array
+    prompt_count += 1
   end
   # Creates an array of arrays, where each inner array is a line in out.txt
   outputs_array.each do |line|
@@ -40,4 +42,7 @@ if File.exist?('out.txt')
   puts "Most common Place response: '#{place_max}', occuring #{place_freq[place_max]} times"
   puts "Most common Adjective response: '#{adjective_max}', occuring #{adjective_freq[adjective_max]} times"
   puts "Most common Noun response: '#{noun_max}', occuring #{noun_freq[noun_max]} times"
+  puts "Number of story prompts you have on file: #{prompt_count}"
+else
+  puts '---Error you have not created story promts yet. Please run main.rb before running stats.rb'
 end

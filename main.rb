@@ -31,12 +31,16 @@ input = gets.chomp
 # Validate JSON input
 if input.length < 200 && valid_json?(input)
   parsed_input = JSON.parse(input)
-  message = "One day Anna was walking her #{parsed_input['NUMBER']} #{parsed_input['UNIT_OF_MEASURE']} commute to #{parsed_input['PLACE']} and found a #{parsed_input['ADJECTIVE']} #{parsed_input['NOUN']} on the ground."
-  puts "\n"
-  puts '***Prompt created***'
-  puts message
-  File.open('out.txt', 'a+') { |f| f.puts(message) }
-
+  # Check if values in JSON are blank
+  if !parsed_input.values.include?("")
+    message = "One day Anna was walking her #{parsed_input['NUMBER']} #{parsed_input['UNIT_OF_MEASURE']} commute to #{parsed_input['PLACE']} and found a #{parsed_input['ADJECTIVE']} #{parsed_input['NOUN']} on the ground."
+    puts "\n"
+    puts '***Prompt created***'
+    puts message
+    File.open('out.txt', 'a+') { |f| f.puts(message) }
+  else
+    puts '--- Error, blank values in JSON detected, please run main.rb again with a valid JSON'
+  end
 else
-  puts '----- Error invalid JSON input please start again with a valid JSON'
+  puts '--- Error invalid JSON input please start again with a valid JSON'
 end

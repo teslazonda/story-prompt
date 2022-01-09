@@ -29,7 +29,7 @@ puts json_data
 puts "\n"
 input = gets.chomp
 # Validate JSON input
-if input.length < 300 && valid_json?(input)
+if input.length < 200 && valid_json?(input)
   parsed_input = JSON.parse(input)
   message = "One day Anna was walking her #{parsed_input['NUMBER']} #{parsed_input['UNIT_OF_MEASURE']} commute to #{parsed_input['PLACE']} and found a #{parsed_input['ADJECTIVE']} #{parsed_input['NOUN']} on the ground."
   puts "\n"

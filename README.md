@@ -1,8 +1,8 @@
 ## Installation and Running
 Make sure you have [ruby](https://www.ruby-lang.org/en/documentation/installation/) installed.
-To create a story prompmt run ```ruby main.rb``` in the terminal.
+To create a story prompt run ```ruby main.rb``` in the terminal.
 This will create a local file ```out.txt``` in the current directory.
-To see statistics on the promts you have created run ```ruby stats.rb```
+To see statistics on the prompts you have created run ```ruby stats.rb```
 ## Instructions
 
 Thanks for doing this project as part of your interview process. We appreciate your time and want to make this a fun experience. If you have any questions at all, please reach out to us and we'll get back to you.
